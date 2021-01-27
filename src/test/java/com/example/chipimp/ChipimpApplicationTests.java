@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class ChipimpApplicationTests {
 
     @Test
-    void contextLoads1() {
+    void contextLoads111() {
     }
 
 
