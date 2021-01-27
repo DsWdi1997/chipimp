@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.chipimp.dao.CalibrationMapper" >
+
+    <resultMap id="CalibrationMap" type="com.example.chipimp.pojo.Calibration" >
+        <result column="Number" property="Number" jdbcType="VARCHAR" />
+        <result column="IP0_0" property="IP0_0" jdbcType="VARCHAR" />
+        <result column="NOx_0" property="NOx_0" jdbcType="VARCHAR" />
+        <result column="COR_0" property="COR_0" jdbcType="VARCHAR" />
+        <result column="IP0_1" property="IP0_1" jdbcType="VARCHAR" />
+        <result column="NOx_1" property="NOx_1" jdbcType="VARCHAR" />
+        <result column="COR_1" property="COR_1" jdbcType="VARCHAR" />
+        <result column="IP0_2" property="IP0_2" jdbcType="VARCHAR" />
+        <result column="NOx_2" property="NOx_2" jdbcType="VARCHAR" />
+        <result column="COR_2" property="COR_2" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Calibration_Column_List" >
+        Number,IP0_0,NOx_0,COR_0,IP0_1,Ox_1,COR_1,IP0_2,NOx_2,COR_2
+    </sql>
+
+    <!--查询所有数据-->
+    <select id="getAlls" resultMap="CalibrationMap"  >
+        SELECT
+        *
+        FROM calibration
+    </select>
+
+    <!--根据number查询INO-->
+    <select id="selectino" parameterType="java.lang.String" resultMap="CalibrationMap" >
+        SELECT
+        *
+        FROM calibration
+        where
+            Number = #{Number}
+    </select>
+
+
+    <!-- 根据number模糊查询-->
+    <select id="likeino"  parameterType="java.lang.String"  resultMap="CalibrationMap" >
+        select * FROM calibration
+        where
+            Number like concat('%',#{Number},'%')
+    </select>
+
+
+    <!--新增-->
+    <insert id="addino"  parameterType="com.example.chipimp.pojo.Calibration">
+       INSERT INTO
+            calibration
+            (Number ,IP0_0,NOx_0,COR_0,IP0_1,NOx_1,COR_1,IP0_2,NOx_2,COR_2)
+        VALUES
+            (#{Number},#{IP0_0},#{NOx_0},#{COR_0},#{IP0_1},#{NOx_1},#{COR_1},#{IP0_2},#{NOx_2},#{COR_2})
+    </insert>
+
+    <!--根据型号删除-->
+    <delete id="deleteino"  parameterType="java.lang.String">
+       DELETE FROM
+        calibration
+       <where>
+           Number = #{Number}
+       </where>
+    </delete>
+
+    <update id="updateCalibration" parameterType="com.example.chipimp.pojo.Calibration">
+        update calibration set IP0_0=#{IP0_0},NOx_0=#{NOx_0},COR_0=#{COR_0} ,IP0_1=#{IP0_1},NOx_1=#{NOx_1},COR_1=#{COR_1},IP0_2=#{IP0_2},NOx_2=#{NOx_2},COR_2=#{COR_2}  where Number=#{Number}
+    </update>
+
+
+</mapper>
