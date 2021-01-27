@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>修改Calibration</title>
+    <!-- 引入JQuery -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- 引入BootStrap-->
+    <link th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div th:align="right"><a class="btn btn-sm btn-success" th:href="@{/getalls/calibration}">返回Calibration页面</a></div>
+    <div th:align="center">
+        <h2 >修改Calibration信息</h2>
+    </div>
+    <div th:align="center">
+        <div  class="row" >
+            <form th:action="@{/updateCalibration}" th:object="${updatecalibration}" method="post">
+                <div class="form-group" >
+                    <label>Number</label>
+                    <input type="text" name="Number" class="form-control" placeholder="Number"
+                           th:value="*{number}" >
+                </div>
+                <div class="form-group" >
+                    <label>IP0_0</label>
+                    <input type="text" name="IP0_0" class="form-control" placeholder="IP0_0"
+                           th:value="*{IP0_0}">
+                </div>
+                <div class="form-group">
+                    <label>NOx_0</label>
+                    <input type="text" name="NOx_0" class="form-control" placeholder="NOx_0"
+                           th:value="*{NOx_0}">
+                </div>
+                <div class="form-group">
+                    <label>COR_0</label>
+                    <input type="text" name="COR_0" class="form-control" placeholder="COR_0"
+                           th:value="*{COR_0}">
+                </div>
+                <div class="form-group" >
+                    <label>IP0_1</label>
+                    <input type="text" name="IP0_1" class="form-control" placeholder="IP0_1"
+                           th:value="*{IP0_1}">
+                </div>
+                <div class="form-group">
+                    <label>NOx_1</label>
+                    <input type="text" name="NOx_1" class="form-control" placeholder="NOx_1"
+                           th:value="*{NOx_1}">
+                </div>
+                <div class="form-group">
+                    <label>COR_1</label>
+                    <input type="text" name="COR_1" class="form-control" placeholder="COR_1"
+                           th:value="*{COR_1}">
+                </div>
+                <div class="form-group" >
+                    <label>IP0_2</label>
+                    <input type="text" name="IP0_2" class="form-control" placeholder="IP0_2"
+                           th:value="*{IP0_2}">
+                </div>
+                <div class="form-group">
+                    <label>NOx_2</label>
+                    <input type="text" name="NOx_2" class="form-control" placeholder="NOx_2"
+                           th:value="*{NOx_2}">
+                </div>
+                <div class="form-group">
+                    <label>COR_2</label>
+                    <input type="text" name="COR_2" class="form-control" placeholder="COR_2"
+                           th:value="*{COR_2}">
+                </div>
+
+                <button type="submit" class="btn btn-primary">修改</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

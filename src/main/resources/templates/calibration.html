@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>查看Calibration</title>
+    <!-- 引入JQuery -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <link th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body >
+<div class="container-fluid">
+
+    <h1 align="center">
+        查看Calibration
+    </h1>
+    <form action="#" th:action="@{/like/calibration}" th:object="${calibration}" method="post">
+        <input type="text"  placeholder="输入查找的number" required="" autofocus="" th:field="*{number}">
+        <button type="submit" class="btn btn-primary">搜索</button>
+        <div align="right"><a class="btn btn-sm btn-success" th:href="@{/toAddcalibrationPage/}">添加Calibration</a></div>
+    </form>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+                <th>NUMBER</th>
+                <th>IP0_0</th>
+                <th>NOx_0</th>
+                <th>COR_0</th>
+                <th>IP0_1</th>
+                <th>NOx_1</th>
+                <th>COR_1</th>
+                <th>IP0_2</th>
+                <th>NOx_2</th>
+                <th>COR_2</th>
+                <!--操作-->
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="calibration:${calibrations}">
+                <td th:text="${calibration.number}"></td>
+                <td th:text="${calibration.IP0_0}"></td>
+                <td th:text="${calibration.NOx_0}"></td>
+                <td th:text="${calibration.COR_0}"></td>
+                <td th:text="${calibration.IP0_1}"></td>
+                <td th:text="${calibration.NOx_1}"></td>
+                <td th:text="${calibration.COR_1}"></td>
+                <td th:text="${calibration.IP0_2}"></td>
+                <td th:text="${calibration.NOx_2}"></td>
+                <td th:text="${calibration.COR_2}"></td>
+                <td>
+                    <!--操作-->
+                    <!--URL需要使用@-->
+                    <a class="btn-sm btn-primary" th:href="@{/toUpdatePage/calibration/}+${calibration.number}" method="post" >编辑</a>
+                    <a class="btn-sm btn-danger" th:href="@{/deletenumber/}+${calibration.number}" method="post">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </main>
+</div>
+</div>
+</body>
+</html>
+
