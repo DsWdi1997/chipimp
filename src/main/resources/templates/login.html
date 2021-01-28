@@ -8,26 +8,44 @@
         <link rel="shortcut icon" th:href="@{/static/img/favicon.ico}" />
         <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet"/>
         <link th:href="@{/static/css/font-awesome.min.css}" rel="stylesheet"/>
+    <style>
+        body
+        {
+            background:url("static/img/login-background_backup.jpg");
+        }
+        h1
+        {
+            color: #070606;
+            margin:200px 15px 15px 320px;
+        }
+        p
+        {
+            font-family:"Times New Roman";
+            font-size:20px;
+        }
+
+        div{
+            margin:250px 15px 15px 620px;
+        }
+    </style>
 </head>
 <!--<form action="#" th:action="@{/checkUser}" th:object="${user}" method="post">-->
 <!--    账号：<input type="text" th:field="*{user_name}" />-->
 <!--    密码：<input type="text" th:field="*{user_passwd}" />-->
 <!--    <input type="submit" />-->
 <!--</form>-->
-<body class="text-center">
-<form class="form-signin" action="#" th:action="@{/checkUser}" th:object="${user}" method="post">
-    <h1 class="h3 mb-3 font-weight-normal">用户登录</h1>
-    <label class="sr-only" >账号</label>
-    <input type="text" class="form-control" placeholder="账号" required="" autofocus="" th:field="*{user_name}">
+<body>
+
+    <div>
+    <form class="form-signin" action="#" th:action="@{/checkUser}" th:object="${user}" method="post">
+        <h1 class="h3 mb-3 font-weight-normal" style="margin:10px 15px 15px 70px;">用户登录</h1>
+    <label class="sr-only">账号</label>
+    <input type="text" class="form-control" placeholder="账号" required="" autofocus="" th:field="*{user_name}" style="width:240px;">
     <label class="sr-only" >密码</label>
-    <input type="password" class="form-control" placeholder="密码" required="" th:field="*{user_passwd}" >
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me" th:text="记住我">
-        </label>
+    <input type="password" class="form-control" placeholder="密码" required="" th:field="*{user_passwd}" style="width:240px;" >
+    <button class="btn btn-lg btn-primary btn-block" type="submit" style="width:240px;margin:30px 15px 15px 0px;">登录</button>
+    </form>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-</form>
 <script th:src="@{/static/js/jquery.min.js}"></script>
 <script th:src="@{/static/js/bootstrap.min.js}"></script>
 </body>
