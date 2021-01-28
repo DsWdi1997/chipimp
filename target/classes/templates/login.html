@@ -35,7 +35,6 @@
 <!--    <input type="submit" />-->
 <!--</form>-->
 <body>
-
     <div>
     <form class="form-signin" action="#" th:action="@{/checkUser}" th:object="${user}" method="post">
         <h1 class="h3 mb-3 font-weight-normal" style="margin:10px 15px 15px 70px;">用户登录</h1>
@@ -45,7 +44,7 @@
     <input type="password" class="form-control" placeholder="密码" required="" th:field="*{user_passwd}" style="width:240px;" >
     <button class="btn btn-lg btn-primary btn-block" type="submit" style="width:240px;margin:30px 15px 15px 0px;">登录</button>
     </form>
-    </div>
+        </div>
 <script th:src="@{/static/js/jquery.min.js}"></script>
 <script th:src="@{/static/js/bootstrap.min.js}"></script>
 </body>

@@ -1,18 +1,18 @@
 package com.example.chipimp.controller;
 
-import com.example.chipimp.pojo.Chip;
 import com.example.chipimp.pojo.User;
 import com.example.chipimp.service.ChipService;
 import com.example.chipimp.service.UserService;
 import com.example.chipimp.util.Loginformation;
+import com.google.code.kaptcha.Constants;
+import com.google.code.kaptcha.impl.DefaultKaptcha;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,9 +26,6 @@ public class LoginController {
     private UserService userService;
 
     private Loginformation loginformation = new Loginformation();
-
-    @Autowired
-    private ChipService chipService ;
 
 
     @RequestMapping({"/","/toLogin"})
