@@ -42,7 +42,7 @@ public class ChipPageController {
         model.addAttribute("chips",chips);
         //搜索model
         model.addAttribute("chip",chip);
-        return "chip" ;
+        return "chip1" ;
     }
 
     /**添加CHIP

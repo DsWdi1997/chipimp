@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>NOX系统</title>
+
+    <!-- Iconos -->
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <link rel="stylesheet" th:href="@{/static/css/style.css}" media="screen" type="text/css" />
+
+
+</head>
+
+
+<body>
+            <h1 class="h3 mb-3 font-weight-normal" style="margin:10px 15px 15px 70px;">NOX系统</h1>
+<!-- Contenedor -->
+<ul id="accordion" class="accordion">
+    <li>
+        <div class="link"><i class="fa fa-paint-brush"></i>菜单一<i class="fa fa-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="#" th:href="@{/getalls/chip}">管理CHIP</a></li>
+            <li><a href="#" th:href="@{/getalls/calibration}">管理Calibration</a></li>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script th:src="@{/static/js/jquery.min.js}"></script>
+<script th:src="@{/static/js/bootstrap.min.js}"></script>
+<script th:src="@{/static/js/homepage.js}"></script>
+</body>
+
+</html>

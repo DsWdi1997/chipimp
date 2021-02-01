@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="renderer" content="webkit">
-        <title>首页</title>
+        <title>NOX系统平台</title>
         <link rel="shortcut icon" th:href="@{/static/img/favicon.ico}" />
         <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet"/>
         <link th:href="@{/static/css/font-awesome.min.css}" rel="stylesheet"/>
@@ -23,10 +23,6 @@
             font-family:"Times New Roman";
             font-size:20px;
         }
-
-        div{
-            margin:250px 15px 15px 620px;
-        }
     </style>
 </head>
 <!--<form action="#" th:action="@{/checkUser}" th:object="${user}" method="post">-->
@@ -35,16 +31,18 @@
 <!--    <input type="submit" />-->
 <!--</form>-->
 <body>
-    <div>
+    <div style="margin:250px 15px 15px 620px;">
     <form class="form-signin" action="#" th:action="@{/checkUser}" th:object="${user}" method="post">
         <h1 class="h3 mb-3 font-weight-normal" style="margin:10px 15px 15px 70px;">用户登录</h1>
     <label class="sr-only">账号</label>
     <input type="text" class="form-control" placeholder="账号" required="" autofocus="" th:field="*{user_name}" style="width:240px;">
     <label class="sr-only" >密码</label>
     <input type="password" class="form-control" placeholder="密码" required="" th:field="*{user_passwd}" style="width:240px;" >
+    <input type="text" class="form-control" id="code" name="code" required placeholder="请输入验证码" style="width:120px;">
+    <img class="div-inline" alt="验证码" onclick = "this.src='/getCode?d='+new Date()*1" src="/getCode" style="margin:0px 15px 15px 0px;"/>
     <button class="btn btn-lg btn-primary btn-block" type="submit" style="width:240px;margin:30px 15px 15px 0px;">登录</button>
     </form>
-        </div>
+    </div>
 <script th:src="@{/static/js/jquery.min.js}"></script>
 <script th:src="@{/static/js/bootstrap.min.js}"></script>
 </body>

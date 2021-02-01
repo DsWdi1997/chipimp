@@ -16,6 +16,6 @@ public class Controller {
     @RequestMapping("/spring2")
     public String index1(){
 
-        return "chip";
+        return "homepage";
     }
 }
