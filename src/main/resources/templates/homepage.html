@@ -17,13 +17,34 @@
 
 </head>
 
-
 <body>
-            <h1 class="h3 mb-3 font-weight-normal" style="margin:10px 15px 15px 70px;">NOX系统</h1>
+
+            <img class="imc" src="/static/img/xp.png"  alt="芯片图标" />
+            <div class="imc">
+                <h1 style="margin: 15px 15px 15px 600px">NOX系统</h1>
+            </div>
 <!-- Contenedor -->
 <ul id="accordion" class="accordion">
     <li>
         <div class="link"><i class="fa fa-paint-brush"></i>菜单一<i class="fa fa-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="#" th:href="@{/getalls/chip}">管理CHIP</a></li>
+            <li><a href="#" th:href="@{/getalls/calibration}">管理Calibration</a></li>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+        </ul>
+    </li>
+    <li>
+        <div class="link"><i class="fa fa-paint-brush"></i>菜单二<i class="fa fa-chevron-down"></i></div>
+        <ul class="submenu">
+            <li><a href="#" th:href="@{/getalls/chip}">管理CHIP</a></li>
+            <li><a href="#" th:href="@{/getalls/calibration}">管理Calibration</a></li>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+        </ul>
+    </li>
+    <li>
+        <div class="link"><i class="fa fa-paint-brush"></i>菜单三<i class="fa fa-chevron-down"></i></div>
         <ul class="submenu">
             <li><a href="#" th:href="@{/getalls/chip}">管理CHIP</a></li>
             <li><a href="#" th:href="@{/getalls/calibration}">管理Calibration</a></li>

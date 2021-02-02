@@ -6,6 +6,7 @@ import com.example.chipimp.pojo.User;
 import com.example.chipimp.service.ChipService;
 import com.example.chipimp.service.UserService;
 import com.example.chipimp.util.CustomType;
+import com.example.chipimp.util.Filetest;
 import com.example.chipimp.util.Loginformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,8 @@ public class ChipPageController {
 
     private Loginformation loginformation = new Loginformation();
 
+    private Filetest filetest = new Filetest();
+
     @Autowired
     private ChipService chipService ;
 
@@ -42,7 +45,7 @@ public class ChipPageController {
         model.addAttribute("chips",chips);
         //搜索model
         model.addAttribute("chip",chip);
-        return "chip1" ;
+        return "chip" ;
     }
 
     /**添加CHIP
@@ -61,6 +64,7 @@ public class ChipPageController {
     public String addjsonoe( Chip chip, Model model){
         try {
             chipService.addmodel(chip);
+            filetest.filetextstr("F:\\MyJ\\chipimp","C","MODEL:"+chip.getModel()+"\n"+"OE:"+chip.getOE()+"\n"+"Voltage:"+chip.getVoltage()+"\n");
             System.out.println("传参"+chip);
         }catch (Exception e){
             e.printStackTrace();

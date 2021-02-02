@@ -40,7 +40,6 @@ public class LoginController {
     }
 
 
-
     //获取验证码
     @RequestMapping("/getCode")
     public void defaultKaptcha(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception{
@@ -89,7 +88,7 @@ public class LoginController {
             if (tempuser.getUser_name().equals(userName) & tempuser.getUser_passwd().equals(passWord) & captchaId.equals(parameter)){
                 HttpSession session = request.getSession();
                 session.setAttribute("user",user);
-                return "index";
+                return "homepage";
             }
         }
         return "login";

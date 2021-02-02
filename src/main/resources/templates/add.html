@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>1323</title>
+    <style>
+        .black_overlay{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: #f9f9ff;
+            z-index:1001;
+            -moz-opacity: 0.8;
+            opacity:.80;
+            filter: alpha(opacity=88);
+        }
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 55%;
+            height: 55%;
+            padding: 20px;
+            border: 10px solid orange;
+            background-color: white;
+            z-index:1002;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div style="margin: 0px 15px 15px 1420px"><a class="btn btn-sm btn-success" href = "javascript:void(0)"onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">新   增</a></div>
+<div id="light" class="white_content">
+    <br>　　　　
+    <!--新增CHIP的表单-->
+    <form th:action="@{/addchip}"  method="post">
+        <div class="form-group">
+            <label>MODEL</label>
+            <input type="text"  name="model" class="form-control" placeholder="MODEL">
+        </div>
+        <div class="form-group">
+            <label>OE</label>
+            <input type="text" name="OE" class="form-control" placeholder="OE">
+        </div>
+        <div class="form-group">
+            <label>Voltage</label>
+            <input type="text" name="Voltage" class="form-control" placeholder="Voltage">
+        </div>
+        <button type="submit" class="btn btn-primary">保存</button>
+    </form>
+    <button  type="submit" class="btn btn-primary" href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">退出</button>
+</div>
+<div id="fade" class="black_overlay"></div>
+</body>
+</html>
