@@ -64,7 +64,7 @@ public class ChipPageController {
     public String addjsonoe( Chip chip, Model model){
         try {
             chipService.addmodel(chip);
-            filetest.filetextstr("F:\\MyJ\\chipimp","C","MODEL:"+chip.getModel()+"\n"+"OE:"+chip.getOE()+"\n"+"Voltage:"+chip.getVoltage()+"\n");
+            filetest.filetextstr("./","C","MODEL:"+chip.getModel()+"\n"+"OE:"+chip.getOE()+"\n"+"Voltage:"+chip.getVoltage()+"\n");
             System.out.println("传参"+chip);
         }catch (Exception e){
             e.printStackTrace();

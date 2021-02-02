@@ -134,7 +134,7 @@
             <td>
                 <!--操作-->
                 <!--URL需要使用@-->
-                <a class="btn-sm btn-primary"  href = "javascript:void(0)"onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'" method="post" >编辑</a>
+                <a class="btn-sm btn-primary" th:href="@{/toUpdatePage/chip/}+${chip.id} " method="post" >编辑</a>
                 <a class="btn-sm btn-danger" th:href="@{/deletemodel/}+${chip.model}" method="post">删除</a>
             </td>
         </tr>
